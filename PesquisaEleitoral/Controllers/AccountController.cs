@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using PesquisaEleitoral.Models;
+using System.Collections.Generic;
 
 namespace PesquisaEleitoral.Controllers
 {
@@ -140,9 +141,15 @@ namespace PesquisaEleitoral.Controllers
         public ActionResult Register()
         {
             ApplicationDbContext db = new ApplicationDbContext();
-            var list = db.Bairros.ToList();
-            SelectList listaBairros = new SelectList(list, "BairroId", "BairroNome");
-            ViewBag.list = listaBairros;
+            /*var list = db.Bairros.ToList();
+            SelectList listaBairros = new SelectList(list, "BairroId", "BairroNome");*/
+            IEnumerable<SelectListItem> items = db.Bairros.Select(c => new SelectListItem
+            {
+                Value = c.BairroNome,
+                Text = c.BairroNome
+
+            });
+            ViewBag.list = items;
 
             return View();
         }

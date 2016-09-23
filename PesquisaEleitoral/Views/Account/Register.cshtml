@@ -18,9 +18,15 @@
         </div>
     </div>
     <div class="form-group">
+        @Html.LabelFor(m => m.DataDeNascimento, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.DataDeNascimento, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
         @Html.LabelFor(m => m.BairroM, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
-            @Html.DropDownListFor(m => m.BairroM, (SelectList)ViewBag.lists)
+            @Html.DropDownListFor(m => m.BairroM, ViewBag.list as SelectList))
         </div>
     </div>
     <div class="form-group">
