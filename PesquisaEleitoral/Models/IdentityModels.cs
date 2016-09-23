@@ -24,6 +24,7 @@ namespace PesquisaEleitoral.Models
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
+        public DbSet<Candidato> CandidatoContext { get; set; }
 
         public static ApplicationDbContext Create()
         {
