@@ -12,6 +12,17 @@ namespace PesquisaEleitoral.Models
     {
         [Key]
         public int BairroId { get; set; }
-        public string BairroNome { get; set; }
+        [Required]
+        public string BairroNome
+        {
+            get
+            {
+                return BairroNome.ToUpper();
+            }
+            set
+            {
+                BairroNome = value.ToUpper();
+            }
+        }
     }
 }
