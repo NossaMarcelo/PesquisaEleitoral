@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace PesquisaEleitoral.Models
 {
@@ -18,7 +19,8 @@ namespace PesquisaEleitoral.Models
             return userIdentity;
         }
         public DateTime DataContext { get; set; }
-        public Bairro BairroContext { get; set; }
+        [Required]
+        public int BairroContext { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>

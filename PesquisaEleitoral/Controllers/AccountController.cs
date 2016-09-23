@@ -140,16 +140,6 @@ namespace PesquisaEleitoral.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
-            ApplicationDbContext db = new ApplicationDbContext();
-            /*var list = db.Bairros.ToList();
-            SelectList listaBairros = new SelectList(list, "BairroId", "BairroNome");*/
-            IEnumerable<SelectListItem> items = db.Bairros.Select(c => new SelectListItem
-            {
-                Value = c.BairroNome,
-                Text = c.BairroNome
-
-            });
-            ViewBag.list = items;
 
             return View();
         }
