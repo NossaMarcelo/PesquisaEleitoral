@@ -139,6 +139,11 @@ namespace PesquisaEleitoral.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
+            ApplicationDbContext db = new ApplicationDbContext();
+            var list = db.Bairros.ToList();
+            SelectList listaBairros = new SelectList(list, "BairroId", "BairroNome");
+            ViewBag.list = listaBairros;
+
             return View();
         }
 
@@ -151,7 +156,7 @@ namespace PesquisaEleitoral.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, BairroContext = model.BairroM };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {

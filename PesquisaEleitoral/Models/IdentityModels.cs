@@ -18,6 +18,7 @@ namespace PesquisaEleitoral.Models
             return userIdentity;
         }
         public DateTime DataContext { get; set; }
+        public Bairro BairroContext { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>

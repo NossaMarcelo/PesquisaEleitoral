@@ -13,7 +13,18 @@ namespace PesquisaEleitoral.Models
         [Key]
         public int BairroId { get; set; }
         [Required]
-        public string BairroNome { get; set; }
-        
+        public string BairroNome
+        {
+            get
+            {
+                return this._nome;
+            }
+            set
+            {
+                this._nome = value.Trim().ToUpper();
+            }
+        }
+        private string _nome;
+
     }
 }
