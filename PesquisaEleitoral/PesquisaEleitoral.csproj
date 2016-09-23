@@ -196,6 +196,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BairroesController.cs" />
     <Compile Include="Controllers\CandidatosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -212,6 +213,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Bairro.cs" />
     <Compile Include="Models\Candidato.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -283,6 +285,11 @@
     <Content Include="Views\Candidatos\Details.cshtml" />
     <Content Include="Views\Candidatos\Edit.cshtml" />
     <Content Include="Views\Candidatos\Index.cshtml" />
+    <Content Include="Views\Bairroes\Create.cshtml" />
+    <Content Include="Views\Bairroes\Delete.cshtml" />
+    <Content Include="Views\Bairroes\Details.cshtml" />
+    <Content Include="Views\Bairroes\Edit.cshtml" />
+    <Content Include="Views\Bairroes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

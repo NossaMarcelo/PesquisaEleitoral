@@ -32,5 +32,7 @@ namespace PesquisaEleitoral.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<PesquisaEleitoral.Models.Bairro> Bairroes { get; set; }
     }
 }
