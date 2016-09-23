@@ -1,0 +1,39 @@
+﻿@model IEnumerable<PesquisaEleitoral.Models.Candidato>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CandidatoNome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CandidatoNumero)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CandidatoNome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CandidatoNumero)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CandidatoId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CandidatoId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CandidatoId })
+        </td>
+    </tr>
+}
+
+</table>
