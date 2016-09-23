@@ -27,6 +27,7 @@ namespace PesquisaEleitoral.Models
         {
         }
         public DbSet<Candidato> CandidatoContext { get; set; }
+        public DbSet<Bairro> Bairros { get; set; }
 
         public static ApplicationDbContext Create()
         {

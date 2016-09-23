@@ -196,6 +196,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BairrosController.cs" />
     <Compile Include="Controllers\CandidatosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -209,6 +210,14 @@
     <Compile Include="Migrations\201609231259148_002.cs" />
     <Compile Include="Migrations\201609231259148_002.Designer.cs">
       <DependentUpon>201609231259148_002.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609231900512_teste.cs" />
+    <Compile Include="Migrations\201609231900512_teste.Designer.cs">
+      <DependentUpon>201609231900512_teste.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609231916460_BairroController.cs" />
+    <Compile Include="Migrations\201609231916460_BairroController.Designer.cs">
+      <DependentUpon>201609231916460_BairroController.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -284,6 +293,11 @@
     <Content Include="Views\Candidatos\Details.cshtml" />
     <Content Include="Views\Candidatos\Edit.cshtml" />
     <Content Include="Views\Candidatos\Index.cshtml" />
+    <Content Include="Views\Bairros\Create.cshtml" />
+    <Content Include="Views\Bairros\Delete.cshtml" />
+    <Content Include="Views\Bairros\Details.cshtml" />
+    <Content Include="Views\Bairros\Edit.cshtml" />
+    <Content Include="Views\Bairros\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -302,6 +316,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201609231259148_002.resx">
       <DependentUpon>201609231259148_002.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609231900512_teste.resx">
+      <DependentUpon>201609231900512_teste.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609231916460_BairroController.resx">
+      <DependentUpon>201609231916460_BairroController.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
