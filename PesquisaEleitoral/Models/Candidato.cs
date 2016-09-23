@@ -12,7 +12,10 @@ namespace PesquisaEleitoral.Models
     {
         [Key]
         public int CandidatoId { get; set; }
+        [Required]
         public string CandidatoNome { get; set; }
+        [Required]
+        [Range(10,99, ErrorMessage = "Número do candidato inválido.")]
         public int CandidatoNumero { get; set; }
     }
 }
