@@ -328,6 +328,7 @@
     <Content Include="Views\Bairros\Edit.cshtml" />
     <Content Include="Views\Bairros\Index.cshtml" />
     <Content Include="Views\Voto\Voto.cshtml" />
+    <Content Include="Views\Voto\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -7,6 +7,12 @@ namespace PesquisaEleitoral.Controllers
     public class VotoController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+
+        public ActionResult Index()
+        {
+            return View(db.CandidatoContext.ToList());
+        }
+
         public ActionResult Voto()
         {
             return View();
@@ -28,7 +34,7 @@ namespace PesquisaEleitoral.Controllers
                 db.SaveChanges();
             }
             
-            return RedirectToAction("Voto");
+            return RedirectToAction("Index");
         }
         public ApplicationUser VerificarUsuarioPorEmail(ApplicationUser u)
         {
