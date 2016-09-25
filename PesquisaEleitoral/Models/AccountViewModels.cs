@@ -65,6 +65,9 @@ namespace PesquisaEleitoral.Models
 
     public class RegisterViewModel
     {
+
+        public System.Web.Mvc.SelectList Bairros { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
@@ -75,7 +78,7 @@ namespace PesquisaEleitoral.Models
         public DateTime DataDeNascimento { get; set; }
 
         [Display(Name = "Bairro")]
-        public int BairroM { get; set; }
+        public int BairroID { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]

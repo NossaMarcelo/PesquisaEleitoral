@@ -17,7 +17,7 @@ namespace PesquisaEleitoral.Controllers
         // GET: Bairros
         public ActionResult Index()
         {
-            return View(db.Bairros.ToList());
+            return View(db.BairroContext.ToList());
         }
 
         // GET: Bairros/Details/5
@@ -27,7 +27,7 @@ namespace PesquisaEleitoral.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Bairro bairro = db.Bairros.Find(id);
+            Bairro bairro = db.BairroContext.Find(id);
             if (bairro == null)
             {
                 return HttpNotFound();
@@ -50,7 +50,7 @@ namespace PesquisaEleitoral.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Bairros.Add(bairro);
+                db.BairroContext.Add(bairro);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -65,7 +65,7 @@ namespace PesquisaEleitoral.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Bairro bairro = db.Bairros.Find(id);
+            Bairro bairro = db.BairroContext.Find(id);
             if (bairro == null)
             {
                 return HttpNotFound();
@@ -96,7 +96,7 @@ namespace PesquisaEleitoral.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Bairro bairro = db.Bairros.Find(id);
+            Bairro bairro = db.BairroContext.Find(id);
             if (bairro == null)
             {
                 return HttpNotFound();
@@ -109,8 +109,8 @@ namespace PesquisaEleitoral.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Bairro bairro = db.Bairros.Find(id);
-            db.Bairros.Remove(bairro);
+            Bairro bairro = db.BairroContext.Find(id);
+            db.BairroContext.Remove(bairro);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

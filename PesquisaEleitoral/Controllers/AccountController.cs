@@ -10,6 +10,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using PesquisaEleitoral.Models;
 using System.Collections.Generic;
+using System.Collections;
 
 namespace PesquisaEleitoral.Controllers
 {
@@ -19,8 +20,16 @@ namespace PesquisaEleitoral.Controllers
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
+        private ApplicationDbContext db = new ApplicationDbContext();
+
         public AccountController()
         {
+        }
+        
+
+        public SelectList ListaTodosBairros()
+        {
+            return new SelectList(db.BairroContext, "BairroId", "BairroNome"); //Primeira Chave Depois o Valor
         }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
@@ -140,8 +149,11 @@ namespace PesquisaEleitoral.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
-
-            return View();
+            RegisterViewModel Model = new RegisterViewModel();
+            {
+                Model.Bairros = ListaTodosBairros();
+            }
+            return View(Model);
         }
 
         //
@@ -153,7 +165,7 @@ namespace PesquisaEleitoral.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, BairroContext = model.BairroM };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {

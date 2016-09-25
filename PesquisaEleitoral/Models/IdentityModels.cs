@@ -19,8 +19,7 @@ namespace PesquisaEleitoral.Models
             return userIdentity;
         }
         public DateTime DataContext { get; set; }
-        [Required]
-        public int BairroContext { get; set; }
+        public int BairroID { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
@@ -30,7 +29,7 @@ namespace PesquisaEleitoral.Models
         {
         }
         public DbSet<Candidato> CandidatoContext { get; set; }
-        public DbSet<Bairro> Bairros { get; set; }
+        public DbSet<Bairro> BairroContext { get; set; }
 
         public static ApplicationDbContext Create()
         {

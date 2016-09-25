@@ -9,7 +9,7 @@ namespace PesquisaEleitoral.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(PesquisaEleitoral.Models.ApplicationDbContext context)
