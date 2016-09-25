@@ -202,6 +202,7 @@
     <Compile Include="Controllers\CandidatosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RelatorioController.cs" />
     <Compile Include="Controllers\VotoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -242,6 +243,11 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Bairro.cs" />
     <Compile Include="Models\Candidato.cs" />
+    <Compile Include="DataSet\DataVoto.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataVoto.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\VotoViewModels.cs" />
@@ -266,6 +272,17 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataSet\DataVoto.xsc">
+      <DependentUpon>DataVoto.xsd</DependentUpon>
+    </Content>
+    <None Include="DataSet\DataVoto.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataVoto.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="DataSet\DataVoto.xss">
+      <DependentUpon>DataVoto.xsd</DependentUpon>
     </Content>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -329,9 +346,12 @@
     <Content Include="Views\Bairros\Index.cshtml" />
     <Content Include="Views\Voto\Voto.cshtml" />
     <Content Include="Views\Voto\Index.cshtml" />
+    <Content Include="Views\Relatorio\Index.cshtml" />
+    <Content Include="Views\Relatorio\RelatorioQtdeCand.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Reports\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
