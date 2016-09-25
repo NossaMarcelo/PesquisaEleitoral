@@ -21,7 +21,7 @@ namespace PesquisaEleitoral.Models
         public DateTime DataContext { get; set; }
         public int BairroID { get; set; }
     }
-
+    //TESTE
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
