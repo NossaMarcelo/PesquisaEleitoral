@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
+
 namespace PesquisaEleitoral.Models
 {
     [Table("Bairro")]
@@ -13,10 +14,12 @@ namespace PesquisaEleitoral.Models
         [Key]
         public int BairroId { get; set; }
         [Required]
+        [RegularExpression(@"^[aA-zZ]+((\s[aA-zZ]+)+)?$", ErrorMessage = "Não é permitido o uso de acentos, caracteres especiais e espaços extras.")]
         public string BairroNome
         {
             get
             {
+
                 return this._nome;
             }
             set
@@ -25,6 +28,8 @@ namespace PesquisaEleitoral.Models
             }
         }
         private string _nome;
+
+
 
     }
 }
