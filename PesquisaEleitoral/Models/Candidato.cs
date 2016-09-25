@@ -13,6 +13,7 @@ namespace PesquisaEleitoral.Models
         [Key]
         public int CandidatoId { get; set; }
         [Required]
+        [RegularExpression(@"^[aA-zZ]+((\s[aA-zZ]+)+)?$", ErrorMessage = "Não é permitido o uso de acentos, caracteres especiais e espaços extras.")]
         public string CandidatoNome { get; set; }
         [Required]
         [Range(10,99, ErrorMessage = "Número do candidato inválido.")]
