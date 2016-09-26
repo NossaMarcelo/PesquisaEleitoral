@@ -77,8 +77,12 @@ namespace PesquisaEleitoral.Models
         [Display(Name = "Data De Nascimento")]
         public DateTime DataDeNascimento { get; set; }
 
+        [Required]
         [Display(Name = "Bairro")]
         public int BairroID { get; set; }
+
+        [Display(Name = "Candidato")]
+        public int CandidatoID { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]

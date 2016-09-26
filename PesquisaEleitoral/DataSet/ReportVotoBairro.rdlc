@@ -11,9 +11,6 @@
             <TablixColumn>
               <Width>2.5cm</Width>
             </TablixColumn>
-            <TablixColumn>
-              <Width>2.5cm</Width>
-            </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
@@ -28,7 +25,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Candidato Nome</Value>
+                              <Value>Bairros</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -58,7 +55,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Candidato Numero</Value>
+                              <Value>Votos</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -79,36 +76,6 @@
                     </Textbox>
                   </CellContents>
                 </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox5">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value />
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox5</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
               </TablixCells>
             </TablixRow>
             <TablixRow>
@@ -116,21 +83,21 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="CandidatoNome">
+                    <Textbox Name="Bairros">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!CandidatoNome.Value</Value>
+                              <Value>=Fields!Bairros.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>CandidatoNome</rd:DefaultName>
+                      <rd:DefaultName>Bairros</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -146,52 +113,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="CandidatoNumero">
+                    <Textbox Name="Votos">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!CandidatoNumero.Value</Value>
+                              <Value>=Fields!Votos.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>CandidatoNumero</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                    <rd:Selected>true</rd:Selected>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox6">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value />
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox6</rd:DefaultName>
+                      <rd:DefaultName>Votos</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -213,7 +149,6 @@
           <TablixMembers>
             <TablixMember />
             <TablixMember />
-            <TablixMember />
           </TablixMembers>
         </TablixColumnHierarchy>
         <TablixRowHierarchy>
@@ -226,11 +161,11 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>DataSet1</DataSetName>
-        <Top>2.84903cm</Top>
-        <Left>7.4422cm</Left>
+        <DataSetName>DataVotoBairro</DataSetName>
+        <Top>0.63182cm</Top>
+        <Left>0.47307cm</Left>
         <Height>1.2cm</Height>
-        <Width>7.5cm</Width>
+        <Width>5cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -254,44 +189,40 @@
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="DataVoto">
+    <DataSource Name="ID_aspnet_PesquisaEleitoral_20160923093922DataSet">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>6d5ad638-0109-4ed2-871a-a8ad3e395457</rd:DataSourceID>
+      <rd:DataSourceID>a0a7d3a7-b69e-41d1-b9a1-ddea155e53de</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSet1">
+    <DataSet Name="DataVotoBairro">
       <Query>
-        <DataSourceName>DataVoto</DataSourceName>
+        <DataSourceName>ID_aspnet_PesquisaEleitoral_20160923093922DataSet</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="CandidatoNome">
-          <DataField>CandidatoNome</DataField>
+        <Field Name="Bairros">
+          <DataField>Bairros</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="CandidatoNumero">
-          <DataField>CandidatoNumero</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="CandidatoId">
-          <DataField>CandidatoId</DataField>
+        <Field Name="Votos">
+          <DataField>Votos</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>DataVoto</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\RodrigoR\Source\Repos\PesquisaEleitoral\PesquisaEleitoral\DataSet\DataVoto.xsd</rd:SchemaPath>
-        <rd:TableName>Candidato1</rd:TableName>
+        <rd:DataSetName>_aspnet_PesquisaEleitoral_20160923093922DataSet</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\setec\Documents\Documentos\C#Projetos\PesquisaEleitoral\PesquisaEleitoral\PesquisaEleitoral\_aspnet_PesquisaEleitoral_20160923093922DataSet.xsd</rd:SchemaPath>
+        <rd:TableName>VotosBairro</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>Candidato1TableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>VotosBairroTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>94423c4c-292e-4099-ab1c-7d73a466901c</rd:ReportID>
+  <rd:ReportID>4118e1d4-dd4d-4c50-bb35-b66a00809d40</rd:ReportID>
 </Report>

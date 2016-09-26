@@ -203,14 +203,20 @@
     <Compile Include="Controllers\CandidatosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\RelatorioController.cs" />
     <Compile Include="Controllers\VotoController.cs" />
-    <Compile Include="DataSet\RelatorioVotoCandidato.aspx.cs">
-      <DependentUpon>RelatorioVotoCandidato.aspx</DependentUpon>
+    <Compile Include="DataSet\RelatorioBairroVotos.aspx.cs">
+      <DependentUpon>RelatorioBairroVotos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="DataSet\RelatorioVotoCandidato.aspx.designer.cs">
-      <DependentUpon>RelatorioVotoCandidato.aspx</DependentUpon>
+    <Compile Include="DataSet\RelatorioBairroVotos.aspx.designer.cs">
+      <DependentUpon>RelatorioBairroVotos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\RelatorioVotos.aspx.cs">
+      <DependentUpon>RelatorioVotos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataSet\RelatorioVotos.aspx.designer.cs">
+      <DependentUpon>RelatorioVotos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -251,11 +257,6 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Bairro.cs" />
     <Compile Include="Models\Candidato.cs" />
-    <Compile Include="DataSet\DataVoto.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataVoto.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\VotoViewModels.cs" />
@@ -266,11 +267,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="_aspnet_PesquisaEleitoral_20160923093922DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_aspnet_PesquisaEleitoral_20160923093922DataSet.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="DataSet\RelatorioVotoCandidato.aspx" />
+    <Content Include="DataSet\RelatorioBairroVotos.aspx" />
+    <Content Include="DataSet\RelatorioVotos.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -281,17 +288,6 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="DataSet\DataVoto.xsc">
-      <DependentUpon>DataVoto.xsd</DependentUpon>
-    </Content>
-    <None Include="DataSet\DataVoto.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataVoto.Designer.cs</LastGenOutput>
-    </None>
-    <Content Include="DataSet\DataVoto.xss">
-      <DependentUpon>DataVoto.xsd</DependentUpon>
     </Content>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -356,6 +352,17 @@
     <Content Include="Views\Voto\Voto.cshtml" />
     <Content Include="Views\Voto\Index.cshtml" />
     <Content Include="Views\Relatorio\Index.cshtml" />
+    <Content Include="_aspnet_PesquisaEleitoral_20160923093922DataSet.xsc">
+      <DependentUpon>_aspnet_PesquisaEleitoral_20160923093922DataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="_aspnet_PesquisaEleitoral_20160923093922DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_aspnet_PesquisaEleitoral_20160923093922DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="_aspnet_PesquisaEleitoral_20160923093922DataSet.xss">
+      <DependentUpon>_aspnet_PesquisaEleitoral_20160923093922DataSet.xsd</DependentUpon>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -369,8 +376,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="DataSet\RelatorioVoto.rdlc" />
-    <EmbeddedResource Include="DataSet\Report1.rdlc" />
+    <EmbeddedResource Include="DataSet\ReportVoto.rdlc" />
+    <EmbeddedResource Include="DataSet\ReportVotoBairro.rdlc" />
     <EmbeddedResource Include="Migrations\201609231248319_001.resx">
       <DependentUpon>201609231248319_001.cs</DependentUpon>
     </EmbeddedResource>

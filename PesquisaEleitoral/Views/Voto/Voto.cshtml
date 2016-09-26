@@ -13,10 +13,10 @@
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(m => m.CandidatoNumero, new { @class = "col-md-2 control-label" })
+            @Html.LabelFor(m => m.CandidatoID, new { @class = "col-md-2 control-label" })
             <div class="col-md-10">
-                @Html.TextBoxFor(model => model.CandidatoNumero, new { @class = "form-control" } )
-                @Html.ValidationMessageFor(model => model.CandidatoNumero, "", new { @class = "text-danger" })
+                @Html.TextBoxFor(m => m.CandidatoID, new { @class = "form-control" } )
+                @Html.ValidationMessageFor(m => m.CandidatoID, "", new { @class = "text-danger" })
             </div>
         </div>
         <div class="form-group">

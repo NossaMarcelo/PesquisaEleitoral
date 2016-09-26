@@ -24,8 +24,8 @@ namespace PesquisaEleitoral.Controllers
             ApplicationUser user = new ApplicationUser();
             user.Email = System.Web.HttpContext.Current.User.Identity.Name;
             user = VerificarUsuarioPorEmail(user);
-            user.CandidatoID = model.CandidatoNumero;
-            if(user.CandidatoID == 0)
+            user.CandidatoID = VerificarCandidatoPorNumero(model.CandidatoID);
+            if(user == null)
             {
                 HttpNotFound();
             }else
@@ -40,5 +40,13 @@ namespace PesquisaEleitoral.Controllers
         {
             return db.Users.FirstOrDefault(x => x.Email.Equals(u.Email));
         }
+        public int VerificarCandidatoPorNumero(int num)
+        {
+            Candidato cd = new Candidato();
+            cd = db.CandidatoContext.FirstOrDefault(x => x.CandidatoNumero.Equals(num));
+            num = cd.CandidatoId;
+            return num;
+        }
+        
     }
 }

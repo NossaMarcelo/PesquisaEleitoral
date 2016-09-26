@@ -165,7 +165,7 @@ namespace PesquisaEleitoral.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, DataContext = model.DataDeNascimento, BairroID = model.BairroID };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, DataContext = model.DataDeNascimento, BairroID = model.BairroID, CandidatoID = model.CandidatoID};
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {

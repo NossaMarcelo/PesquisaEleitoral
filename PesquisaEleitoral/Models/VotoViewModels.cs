@@ -10,7 +10,7 @@ namespace PesquisaEleitoral.Models
     {
             [Display(Name = "Candidato Numero")]
             [Range(10, 99, ErrorMessage = "Número inválido.")]
-            public int CandidatoNumero { get; set; }
+            public int CandidatoID { get; set; }
 
     }
 }

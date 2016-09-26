@@ -58,7 +58,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>QTDE</Value>
+                              <Value>Numero</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -88,7 +88,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>Votos</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -146,21 +146,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="QTDE">
+                    <Textbox Name="Numero">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!QTDE.Value</Value>
+                              <Value>=Fields!Numero.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>QTDE</rd:DefaultName>
+                      <rd:DefaultName>Numero</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -172,26 +172,25 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox6">
+                    <Textbox Name="Votos">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>=Fields!Votos.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox6</rd:DefaultName>
+                      <rd:DefaultName>Votos</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -226,9 +225,9 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>DataSetVoto</DataSetName>
-        <Top>1.70603cm</Top>
-        <Left>2.12937cm</Left>
+        <DataSetName>DataVoto</DataSetName>
+        <Top>0.49953cm</Top>
+        <Left>0.44979cm</Left>
         <Height>1.2cm</Height>
         <Width>7.5cm</Width>
         <Style>
@@ -241,7 +240,7 @@
     <Height>2in</Height>
     <Style />
   </Body>
-  <Width>6.75776in</Width>
+  <Width>6.5in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
@@ -254,18 +253,18 @@
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="DataVoto">
+    <DataSource Name="ID_aspnet_PesquisaEleitoral_20160923093922DataSet">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>fdfb4e71-a546-43fc-8caf-a0bae99e9309</rd:DataSourceID>
+      <rd:DataSourceID>db546c7d-17a4-4447-b6a1-7da22ed5ff6e</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSetVoto">
+    <DataSet Name="DataVoto">
       <Query>
-        <DataSourceName>DataVoto</DataSourceName>
+        <DataSourceName>ID_aspnet_PesquisaEleitoral_20160923093922DataSet</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -273,21 +272,25 @@
           <DataField>Nome</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="QTDE">
-          <DataField>QTDE</DataField>
+        <Field Name="Numero">
+          <DataField>Numero</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Votos">
+          <DataField>Votos</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>DataVoto</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\RodrigoR\Source\Repos\PesquisaEleitoral\PesquisaEleitoral\DataSet\DataVoto.xsd</rd:SchemaPath>
-        <rd:TableName>Candidato</rd:TableName>
+        <rd:DataSetName>_aspnet_PesquisaEleitoral_20160923093922DataSet</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\setec\Documents\Documentos\C#Projetos\PesquisaEleitoral\PesquisaEleitoral\PesquisaEleitoral\_aspnet_PesquisaEleitoral_20160923093922DataSet.xsd</rd:SchemaPath>
+        <rd:TableName>Votos</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>CandidatoTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>VotosTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>353af597-d9b7-4f6e-a6f9-dd2ca3380642</rd:ReportID>
+  <rd:ReportID>adfb1247-1e58-4426-9c03-1a05cca3e371</rd:ReportID>
 </Report>
