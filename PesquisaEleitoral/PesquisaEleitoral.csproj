@@ -347,7 +347,6 @@
     <Content Include="Views\Voto\Voto.cshtml" />
     <Content Include="Views\Voto\Index.cshtml" />
     <Content Include="Views\Relatorio\Index.cshtml" />
-    <Content Include="Views\Relatorio\RelatorioQtdeCand.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
