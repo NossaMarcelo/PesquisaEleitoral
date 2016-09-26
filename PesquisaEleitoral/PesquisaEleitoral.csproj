@@ -85,6 +85,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -204,6 +205,13 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\RelatorioController.cs" />
     <Compile Include="Controllers\VotoController.cs" />
+    <Compile Include="DataSet\RelatorioVotoCandidato.aspx.cs">
+      <DependentUpon>RelatorioVotoCandidato.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataSet\RelatorioVotoCandidato.aspx.designer.cs">
+      <DependentUpon>RelatorioVotoCandidato.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -262,6 +270,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="DataSet\RelatorioVotoCandidato.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -360,6 +369,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="DataSet\RelatorioVoto.rdlc" />
+    <EmbeddedResource Include="DataSet\Report1.rdlc" />
     <EmbeddedResource Include="Migrations\201609231248319_001.resx">
       <DependentUpon>201609231248319_001.cs</DependentUpon>
     </EmbeddedResource>
