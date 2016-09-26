@@ -4,6 +4,7 @@ using System.Web.Mvc;
 
 namespace PesquisaEleitoral.Controllers
 {
+    [Authorize]
     public class VotoController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
