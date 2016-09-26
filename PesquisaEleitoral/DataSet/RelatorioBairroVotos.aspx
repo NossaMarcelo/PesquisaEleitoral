@@ -22,6 +22,8 @@
             </LocalReport>
         </rsweb:ReportViewer>
     
+        <asp:Button ID="btn_VoltarOne" runat="server" OnClick="btn_VoltarOne_Click" Text="Voltar" />
+    
         <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="PesquisaEleitoral._aspnet_PesquisaEleitoral_20160923093922DataSetTableAdapters.KarlosTableAdapter"></asp:ObjectDataSource>
     
     </div>
