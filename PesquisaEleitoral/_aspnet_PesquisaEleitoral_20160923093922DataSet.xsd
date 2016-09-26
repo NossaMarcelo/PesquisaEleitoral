@@ -456,6 +456,27 @@ GROUP BY Bairro.BairroNome</CommandText>
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataVotoTableAdapter" GeneratorDataComponentClassName="DataVotoTableAdapter" Name="DataVoto" UserDataComponentName="DataVotoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="aspnet_PesquisaEleitoral_20160923093922ConnectionString (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        DATEDIFF(yy, DataContext, GETDATE()) - CASE WHEN (MONTH(DataContext) &gt; MONTH(GETDATE())) OR
+                         (MONTH(DataContext) = MONTH(GETDATE()) AND DAY(DataContext) &gt; DAY(GETDATE())) THEN 1 ELSE 0 END AS Age, COUNT(CandidatoID) AS Votos
+FROM            AspNetUsers
+GROUP BY DATEDIFF(yy, DataContext, GETDATE()) - CASE WHEN (MONTH(DataContext) &gt; MONTH(GETDATE())) OR
+                         (MONTH(DataContext) = MONTH(GETDATE()) AND DAY(DataContext) &gt; DAY(GETDATE())) THEN 1 ELSE 0 END</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Age" DataSetColumn="Age" />
+              <Mapping SourceColumn="Votos" DataSetColumn="Votos" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -464,7 +485,7 @@ GROUP BY Bairro.BairroNome</CommandText>
   <xs:element name="_aspnet_PesquisaEleitoral_20160923093922DataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="_aspnet_PesquisaEleitoral_20160923093922DataSet" msprop:Generator_UserDSName="_aspnet_PesquisaEleitoral_20160923093922DataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="__MigrationHistory" msprop:Generator_TableClassName="__MigrationHistoryDataTable" msprop:Generator_TableVarName="table__MigrationHistory" msprop:Generator_RowChangedName="__MigrationHistoryRowChanged" msprop:Generator_TablePropName="__MigrationHistory" msprop:Generator_RowDeletingName="__MigrationHistoryRowDeleting" msprop:Generator_RowChangingName="__MigrationHistoryRowChanging" msprop:Generator_RowEvHandlerName="__MigrationHistoryRowChangeEventHandler" msprop:Generator_RowDeletedName="__MigrationHistoryRowDeleted" msprop:Generator_RowClassName="__MigrationHistoryRow" msprop:Generator_UserTableName="__MigrationHistory" msprop:Generator_RowEvArgName="__MigrationHistoryRowChangeEvent">
+        <xs:element name="__MigrationHistory" msprop:Generator_TableClassName="__MigrationHistoryDataTable" msprop:Generator_TableVarName="table__MigrationHistory" msprop:Generator_TablePropName="__MigrationHistory" msprop:Generator_RowDeletingName="__MigrationHistoryRowDeleting" msprop:Generator_RowChangingName="__MigrationHistoryRowChanging" msprop:Generator_RowEvHandlerName="__MigrationHistoryRowChangeEventHandler" msprop:Generator_RowDeletedName="__MigrationHistoryRowDeleted" msprop:Generator_UserTableName="__MigrationHistory" msprop:Generator_RowChangedName="__MigrationHistoryRowChanged" msprop:Generator_RowEvArgName="__MigrationHistoryRowChangeEvent" msprop:Generator_RowClassName="__MigrationHistoryRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MigrationId" msprop:Generator_ColumnVarNameInTable="columnMigrationId" msprop:Generator_ColumnPropNameInRow="MigrationId" msprop:Generator_ColumnPropNameInTable="MigrationIdColumn" msprop:Generator_UserColumnName="MigrationId">
@@ -492,7 +513,7 @@ GROUP BY Bairro.BairroNome</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="AspNetRoles" msprop:Generator_TableClassName="AspNetRolesDataTable" msprop:Generator_TableVarName="tableAspNetRoles" msprop:Generator_RowChangedName="AspNetRolesRowChanged" msprop:Generator_TablePropName="AspNetRoles" msprop:Generator_RowDeletingName="AspNetRolesRowDeleting" msprop:Generator_RowChangingName="AspNetRolesRowChanging" msprop:Generator_RowEvHandlerName="AspNetRolesRowChangeEventHandler" msprop:Generator_RowDeletedName="AspNetRolesRowDeleted" msprop:Generator_RowClassName="AspNetRolesRow" msprop:Generator_UserTableName="AspNetRoles" msprop:Generator_RowEvArgName="AspNetRolesRowChangeEvent">
+        <xs:element name="AspNetRoles" msprop:Generator_TableClassName="AspNetRolesDataTable" msprop:Generator_TableVarName="tableAspNetRoles" msprop:Generator_TablePropName="AspNetRoles" msprop:Generator_RowDeletingName="AspNetRolesRowDeleting" msprop:Generator_RowChangingName="AspNetRolesRowChanging" msprop:Generator_RowEvHandlerName="AspNetRolesRowChangeEventHandler" msprop:Generator_RowDeletedName="AspNetRolesRowDeleted" msprop:Generator_UserTableName="AspNetRoles" msprop:Generator_RowChangedName="AspNetRolesRowChanged" msprop:Generator_RowEvArgName="AspNetRolesRowChangeEvent" msprop:Generator_RowClassName="AspNetRolesRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id">
@@ -512,7 +533,7 @@ GROUP BY Bairro.BairroNome</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="AspNetUserClaims" msprop:Generator_TableClassName="AspNetUserClaimsDataTable" msprop:Generator_TableVarName="tableAspNetUserClaims" msprop:Generator_RowChangedName="AspNetUserClaimsRowChanged" msprop:Generator_TablePropName="AspNetUserClaims" msprop:Generator_RowDeletingName="AspNetUserClaimsRowDeleting" msprop:Generator_RowChangingName="AspNetUserClaimsRowChanging" msprop:Generator_RowEvHandlerName="AspNetUserClaimsRowChangeEventHandler" msprop:Generator_RowDeletedName="AspNetUserClaimsRowDeleted" msprop:Generator_RowClassName="AspNetUserClaimsRow" msprop:Generator_UserTableName="AspNetUserClaims" msprop:Generator_RowEvArgName="AspNetUserClaimsRowChangeEvent">
+        <xs:element name="AspNetUserClaims" msprop:Generator_TableClassName="AspNetUserClaimsDataTable" msprop:Generator_TableVarName="tableAspNetUserClaims" msprop:Generator_TablePropName="AspNetUserClaims" msprop:Generator_RowDeletingName="AspNetUserClaimsRowDeleting" msprop:Generator_RowChangingName="AspNetUserClaimsRowChanging" msprop:Generator_RowEvHandlerName="AspNetUserClaimsRowChangeEventHandler" msprop:Generator_RowDeletedName="AspNetUserClaimsRowDeleted" msprop:Generator_UserTableName="AspNetUserClaims" msprop:Generator_RowChangedName="AspNetUserClaimsRowChanged" msprop:Generator_RowEvArgName="AspNetUserClaimsRowChangeEvent" msprop:Generator_RowClassName="AspNetUserClaimsRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -540,7 +561,7 @@ GROUP BY Bairro.BairroNome</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="AspNetUserLogins" msprop:Generator_TableClassName="AspNetUserLoginsDataTable" msprop:Generator_TableVarName="tableAspNetUserLogins" msprop:Generator_RowChangedName="AspNetUserLoginsRowChanged" msprop:Generator_TablePropName="AspNetUserLogins" msprop:Generator_RowDeletingName="AspNetUserLoginsRowDeleting" msprop:Generator_RowChangingName="AspNetUserLoginsRowChanging" msprop:Generator_RowEvHandlerName="AspNetUserLoginsRowChangeEventHandler" msprop:Generator_RowDeletedName="AspNetUserLoginsRowDeleted" msprop:Generator_RowClassName="AspNetUserLoginsRow" msprop:Generator_UserTableName="AspNetUserLogins" msprop:Generator_RowEvArgName="AspNetUserLoginsRowChangeEvent">
+        <xs:element name="AspNetUserLogins" msprop:Generator_TableClassName="AspNetUserLoginsDataTable" msprop:Generator_TableVarName="tableAspNetUserLogins" msprop:Generator_TablePropName="AspNetUserLogins" msprop:Generator_RowDeletingName="AspNetUserLoginsRowDeleting" msprop:Generator_RowChangingName="AspNetUserLoginsRowChanging" msprop:Generator_RowEvHandlerName="AspNetUserLoginsRowChangeEventHandler" msprop:Generator_RowDeletedName="AspNetUserLoginsRowDeleted" msprop:Generator_UserTableName="AspNetUserLogins" msprop:Generator_RowChangedName="AspNetUserLoginsRowChanged" msprop:Generator_RowEvArgName="AspNetUserLoginsRowChangeEvent" msprop:Generator_RowClassName="AspNetUserLoginsRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="LoginProvider" msprop:Generator_ColumnVarNameInTable="columnLoginProvider" msprop:Generator_ColumnPropNameInRow="LoginProvider" msprop:Generator_ColumnPropNameInTable="LoginProviderColumn" msprop:Generator_UserColumnName="LoginProvider">
@@ -567,7 +588,7 @@ GROUP BY Bairro.BairroNome</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="AspNetUserRoles" msprop:Generator_TableClassName="AspNetUserRolesDataTable" msprop:Generator_TableVarName="tableAspNetUserRoles" msprop:Generator_RowChangedName="AspNetUserRolesRowChanged" msprop:Generator_TablePropName="AspNetUserRoles" msprop:Generator_RowDeletingName="AspNetUserRolesRowDeleting" msprop:Generator_RowChangingName="AspNetUserRolesRowChanging" msprop:Generator_RowEvHandlerName="AspNetUserRolesRowChangeEventHandler" msprop:Generator_RowDeletedName="AspNetUserRolesRowDeleted" msprop:Generator_RowClassName="AspNetUserRolesRow" msprop:Generator_UserTableName="AspNetUserRoles" msprop:Generator_RowEvArgName="AspNetUserRolesRowChangeEvent">
+        <xs:element name="AspNetUserRoles" msprop:Generator_TableClassName="AspNetUserRolesDataTable" msprop:Generator_TableVarName="tableAspNetUserRoles" msprop:Generator_TablePropName="AspNetUserRoles" msprop:Generator_RowDeletingName="AspNetUserRolesRowDeleting" msprop:Generator_RowChangingName="AspNetUserRolesRowChanging" msprop:Generator_RowEvHandlerName="AspNetUserRolesRowChangeEventHandler" msprop:Generator_RowDeletedName="AspNetUserRolesRowDeleted" msprop:Generator_UserTableName="AspNetUserRoles" msprop:Generator_RowChangedName="AspNetUserRolesRowChanged" msprop:Generator_RowEvArgName="AspNetUserRolesRowChangeEvent" msprop:Generator_RowClassName="AspNetUserRolesRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="UserId" msprop:Generator_ColumnVarNameInTable="columnUserId" msprop:Generator_ColumnPropNameInRow="UserId" msprop:Generator_ColumnPropNameInTable="UserIdColumn" msprop:Generator_UserColumnName="UserId">
@@ -587,7 +608,7 @@ GROUP BY Bairro.BairroNome</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Bairro" msprop:Generator_TableClassName="BairroDataTable" msprop:Generator_TableVarName="tableBairro" msprop:Generator_RowChangedName="BairroRowChanged" msprop:Generator_TablePropName="Bairro" msprop:Generator_RowDeletingName="BairroRowDeleting" msprop:Generator_RowChangingName="BairroRowChanging" msprop:Generator_RowEvHandlerName="BairroRowChangeEventHandler" msprop:Generator_RowDeletedName="BairroRowDeleted" msprop:Generator_RowClassName="BairroRow" msprop:Generator_UserTableName="Bairro" msprop:Generator_RowEvArgName="BairroRowChangeEvent">
+        <xs:element name="Bairro" msprop:Generator_TableClassName="BairroDataTable" msprop:Generator_TableVarName="tableBairro" msprop:Generator_TablePropName="Bairro" msprop:Generator_RowDeletingName="BairroRowDeleting" msprop:Generator_RowChangingName="BairroRowChanging" msprop:Generator_RowEvHandlerName="BairroRowChangeEventHandler" msprop:Generator_RowDeletedName="BairroRowDeleted" msprop:Generator_UserTableName="Bairro" msprop:Generator_RowChangedName="BairroRowChanged" msprop:Generator_RowEvArgName="BairroRowChangeEvent" msprop:Generator_RowClassName="BairroRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="BairroId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnBairroId" msprop:Generator_ColumnPropNameInRow="BairroId" msprop:Generator_ColumnPropNameInTable="BairroIdColumn" msprop:Generator_UserColumnName="BairroId" type="xs:int" />
@@ -601,7 +622,7 @@ GROUP BY Bairro.BairroNome</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="AspNetUsers" msprop:Generator_TableClassName="AspNetUsersDataTable" msprop:Generator_TableVarName="tableAspNetUsers" msprop:Generator_RowChangedName="AspNetUsersRowChanged" msprop:Generator_TablePropName="AspNetUsers" msprop:Generator_RowDeletingName="AspNetUsersRowDeleting" msprop:Generator_RowChangingName="AspNetUsersRowChanging" msprop:Generator_RowEvHandlerName="AspNetUsersRowChangeEventHandler" msprop:Generator_RowDeletedName="AspNetUsersRowDeleted" msprop:Generator_RowClassName="AspNetUsersRow" msprop:Generator_UserTableName="AspNetUsers" msprop:Generator_RowEvArgName="AspNetUsersRowChangeEvent">
+        <xs:element name="AspNetUsers" msprop:Generator_TableClassName="AspNetUsersDataTable" msprop:Generator_TableVarName="tableAspNetUsers" msprop:Generator_TablePropName="AspNetUsers" msprop:Generator_RowDeletingName="AspNetUsersRowDeleting" msprop:Generator_RowChangingName="AspNetUsersRowChanging" msprop:Generator_RowEvHandlerName="AspNetUsersRowChangeEventHandler" msprop:Generator_RowDeletedName="AspNetUsersRowDeleted" msprop:Generator_UserTableName="AspNetUsers" msprop:Generator_RowChangedName="AspNetUsersRowChanged" msprop:Generator_RowEvArgName="AspNetUsersRowChangeEvent" msprop:Generator_RowClassName="AspNetUsersRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id">
@@ -658,7 +679,7 @@ GROUP BY Bairro.BairroNome</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Candidato" msprop:Generator_TableClassName="CandidatoDataTable" msprop:Generator_TableVarName="tableCandidato" msprop:Generator_RowChangedName="CandidatoRowChanged" msprop:Generator_TablePropName="Candidato" msprop:Generator_RowDeletingName="CandidatoRowDeleting" msprop:Generator_RowChangingName="CandidatoRowChanging" msprop:Generator_RowEvHandlerName="CandidatoRowChangeEventHandler" msprop:Generator_RowDeletedName="CandidatoRowDeleted" msprop:Generator_RowClassName="CandidatoRow" msprop:Generator_UserTableName="Candidato" msprop:Generator_RowEvArgName="CandidatoRowChangeEvent">
+        <xs:element name="Candidato" msprop:Generator_TableClassName="CandidatoDataTable" msprop:Generator_TableVarName="tableCandidato" msprop:Generator_TablePropName="Candidato" msprop:Generator_RowDeletingName="CandidatoRowDeleting" msprop:Generator_RowChangingName="CandidatoRowChanging" msprop:Generator_RowEvHandlerName="CandidatoRowChangeEventHandler" msprop:Generator_RowDeletedName="CandidatoRowDeleted" msprop:Generator_UserTableName="Candidato" msprop:Generator_RowChangedName="CandidatoRowChanged" msprop:Generator_RowEvArgName="CandidatoRowChangeEvent" msprop:Generator_RowClassName="CandidatoRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CandidatoId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnCandidatoId" msprop:Generator_ColumnPropNameInRow="CandidatoId" msprop:Generator_ColumnPropNameInTable="CandidatoIdColumn" msprop:Generator_UserColumnName="CandidatoId" type="xs:int" />
@@ -673,7 +694,7 @@ GROUP BY Bairro.BairroNome</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Votos" msprop:Generator_TableClassName="VotosDataTable" msprop:Generator_TableVarName="tableVotos" msprop:Generator_RowChangedName="VotosRowChanged" msprop:Generator_TablePropName="Votos" msprop:Generator_RowDeletingName="VotosRowDeleting" msprop:Generator_RowChangingName="VotosRowChanging" msprop:Generator_RowEvHandlerName="VotosRowChangeEventHandler" msprop:Generator_RowDeletedName="VotosRowDeleted" msprop:Generator_RowClassName="VotosRow" msprop:Generator_UserTableName="Votos" msprop:Generator_RowEvArgName="VotosRowChangeEvent">
+        <xs:element name="Votos" msprop:Generator_TableClassName="VotosDataTable" msprop:Generator_TableVarName="tableVotos" msprop:Generator_TablePropName="Votos" msprop:Generator_RowDeletingName="VotosRowDeleting" msprop:Generator_RowChangingName="VotosRowChanging" msprop:Generator_RowEvHandlerName="VotosRowChangeEventHandler" msprop:Generator_RowDeletedName="VotosRowDeleted" msprop:Generator_UserTableName="Votos" msprop:Generator_RowChangedName="VotosRowChanged" msprop:Generator_RowEvArgName="VotosRowChangeEvent" msprop:Generator_RowClassName="VotosRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Nome" msprop:Generator_ColumnVarNameInTable="columnNome" msprop:Generator_ColumnPropNameInRow="Nome" msprop:Generator_ColumnPropNameInTable="NomeColumn" msprop:Generator_UserColumnName="Nome">
@@ -688,7 +709,7 @@ GROUP BY Bairro.BairroNome</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Karlos" msprop:Generator_TableClassName="KarlosDataTable" msprop:Generator_TableVarName="tableKarlos" msprop:Generator_TablePropName="Karlos" msprop:Generator_RowDeletingName="KarlosRowDeleting" msprop:Generator_RowChangingName="KarlosRowChanging" msprop:Generator_RowEvHandlerName="KarlosRowChangeEventHandler" msprop:Generator_RowDeletedName="KarlosRowDeleted" msprop:Generator_UserTableName="Karlos" msprop:Generator_RowChangedName="KarlosRowChanged" msprop:Generator_RowEvArgName="KarlosRowChangeEvent" msprop:Generator_RowClassName="KarlosRow">
+        <xs:element name="Karlos" msprop:Generator_TableClassName="KarlosDataTable" msprop:Generator_TableVarName="tableKarlos" msprop:Generator_RowChangedName="KarlosRowChanged" msprop:Generator_TablePropName="Karlos" msprop:Generator_RowDeletingName="KarlosRowDeleting" msprop:Generator_RowChangingName="KarlosRowChanging" msprop:Generator_RowEvHandlerName="KarlosRowChangeEventHandler" msprop:Generator_RowDeletedName="KarlosRowDeleted" msprop:Generator_RowClassName="KarlosRow" msprop:Generator_UserTableName="Karlos" msprop:Generator_RowEvArgName="KarlosRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Bairros" msprop:Generator_ColumnVarNameInTable="columnBairros" msprop:Generator_ColumnPropNameInRow="Bairros" msprop:Generator_ColumnPropNameInTable="BairrosColumn" msprop:Generator_UserColumnName="Bairros">
@@ -698,6 +719,14 @@ GROUP BY Bairro.BairroNome</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="Votos" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnVotos" msprop:Generator_ColumnPropNameInRow="Votos" msprop:Generator_ColumnPropNameInTable="VotosColumn" msprop:Generator_UserColumnName="Votos" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DataVoto" msprop:Generator_TableClassName="DataVotoDataTable" msprop:Generator_TableVarName="tableDataVoto" msprop:Generator_TablePropName="DataVoto" msprop:Generator_RowDeletingName="DataVotoRowDeleting" msprop:Generator_RowChangingName="DataVotoRowChanging" msprop:Generator_RowEvHandlerName="DataVotoRowChangeEventHandler" msprop:Generator_RowDeletedName="DataVotoRowDeleted" msprop:Generator_UserTableName="DataVoto" msprop:Generator_RowChangedName="DataVotoRowChanged" msprop:Generator_RowEvArgName="DataVotoRowChangeEvent" msprop:Generator_RowClassName="DataVotoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Age" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnAge" msprop:Generator_ColumnPropNameInRow="Age" msprop:Generator_ColumnPropNameInTable="AgeColumn" msprop:Generator_UserColumnName="Age" type="xs:int" minOccurs="0" />
               <xs:element name="Votos" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnVotos" msprop:Generator_ColumnPropNameInRow="Votos" msprop:Generator_ColumnPropNameInTable="VotosColumn" msprop:Generator_UserColumnName="Votos" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
@@ -743,10 +772,10 @@ GROUP BY Bairro.BairroNome</CommandText>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_dbo.AspNetUserRoles_dbo.AspNetRoles_RoleId" msdata:parent="AspNetRoles" msdata:child="AspNetUserRoles" msdata:parentkey="Id" msdata:childkey="RoleId" msprop:Generator_UserChildTable="AspNetUserRoles" msprop:Generator_ChildPropName="GetAspNetUserRolesRows" msprop:Generator_UserRelationName="FK_dbo.AspNetUserRoles_dbo.AspNetRoles_RoleId" msprop:Generator_RelationVarName="_relationFK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" msprop:Generator_UserParentTable="AspNetRoles" msprop:Generator_ParentPropName="AspNetRolesRow" />
-      <msdata:Relationship name="FK_dbo.AspNetUserClaims_dbo.AspNetUsers_UserId" msdata:parent="AspNetUsers" msdata:child="AspNetUserClaims" msdata:parentkey="Id" msdata:childkey="UserId" msprop:Generator_UserChildTable="AspNetUserClaims" msprop:Generator_ChildPropName="GetAspNetUserClaimsRows" msprop:Generator_UserRelationName="FK_dbo.AspNetUserClaims_dbo.AspNetUsers_UserId" msprop:Generator_ParentPropName="AspNetUsersRow" msprop:Generator_RelationVarName="_relationFK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" msprop:Generator_UserParentTable="AspNetUsers" />
-      <msdata:Relationship name="FK_dbo.AspNetUserLogins_dbo.AspNetUsers_UserId" msdata:parent="AspNetUsers" msdata:child="AspNetUserLogins" msdata:parentkey="Id" msdata:childkey="UserId" msprop:Generator_UserChildTable="AspNetUserLogins" msprop:Generator_ChildPropName="GetAspNetUserLoginsRows" msprop:Generator_UserRelationName="FK_dbo.AspNetUserLogins_dbo.AspNetUsers_UserId" msprop:Generator_ParentPropName="AspNetUsersRow" msprop:Generator_RelationVarName="_relationFK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" msprop:Generator_UserParentTable="AspNetUsers" />
-      <msdata:Relationship name="FK_dbo.AspNetUserRoles_dbo.AspNetUsers_UserId" msdata:parent="AspNetUsers" msdata:child="AspNetUserRoles" msdata:parentkey="Id" msdata:childkey="UserId" msprop:Generator_UserChildTable="AspNetUserRoles" msprop:Generator_ChildPropName="GetAspNetUserRolesRows" msprop:Generator_UserRelationName="FK_dbo.AspNetUserRoles_dbo.AspNetUsers_UserId" msprop:Generator_ParentPropName="AspNetUsersRow" msprop:Generator_RelationVarName="_relationFK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" msprop:Generator_UserParentTable="AspNetUsers" />
+      <msdata:Relationship name="FK_dbo.AspNetUserRoles_dbo.AspNetRoles_RoleId" msdata:parent="AspNetRoles" msdata:child="AspNetUserRoles" msdata:parentkey="Id" msdata:childkey="RoleId" msprop:Generator_UserChildTable="AspNetUserRoles" msprop:Generator_ChildPropName="GetAspNetUserRolesRows" msprop:Generator_UserRelationName="FK_dbo.AspNetUserRoles_dbo.AspNetRoles_RoleId" msprop:Generator_ParentPropName="AspNetRolesRow" msprop:Generator_RelationVarName="_relationFK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" msprop:Generator_UserParentTable="AspNetRoles" />
+      <msdata:Relationship name="FK_dbo.AspNetUserClaims_dbo.AspNetUsers_UserId" msdata:parent="AspNetUsers" msdata:child="AspNetUserClaims" msdata:parentkey="Id" msdata:childkey="UserId" msprop:Generator_UserChildTable="AspNetUserClaims" msprop:Generator_ChildPropName="GetAspNetUserClaimsRows" msprop:Generator_UserRelationName="FK_dbo.AspNetUserClaims_dbo.AspNetUsers_UserId" msprop:Generator_RelationVarName="_relationFK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" msprop:Generator_UserParentTable="AspNetUsers" msprop:Generator_ParentPropName="AspNetUsersRow" />
+      <msdata:Relationship name="FK_dbo.AspNetUserLogins_dbo.AspNetUsers_UserId" msdata:parent="AspNetUsers" msdata:child="AspNetUserLogins" msdata:parentkey="Id" msdata:childkey="UserId" msprop:Generator_UserChildTable="AspNetUserLogins" msprop:Generator_ChildPropName="GetAspNetUserLoginsRows" msprop:Generator_UserRelationName="FK_dbo.AspNetUserLogins_dbo.AspNetUsers_UserId" msprop:Generator_RelationVarName="_relationFK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" msprop:Generator_UserParentTable="AspNetUsers" msprop:Generator_ParentPropName="AspNetUsersRow" />
+      <msdata:Relationship name="FK_dbo.AspNetUserRoles_dbo.AspNetUsers_UserId" msdata:parent="AspNetUsers" msdata:child="AspNetUserRoles" msdata:parentkey="Id" msdata:childkey="UserId" msprop:Generator_UserChildTable="AspNetUserRoles" msprop:Generator_ChildPropName="GetAspNetUserRolesRows" msprop:Generator_UserRelationName="FK_dbo.AspNetUserRoles_dbo.AspNetUsers_UserId" msprop:Generator_RelationVarName="_relationFK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" msprop:Generator_UserParentTable="AspNetUsers" msprop:Generator_ParentPropName="AspNetUsersRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

@@ -211,6 +211,13 @@
     <Compile Include="DataSet\RelatorioBairroVotos.aspx.designer.cs">
       <DependentUpon>RelatorioBairroVotos.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DataSet\RelatorioData.aspx.cs">
+      <DependentUpon>RelatorioData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataSet\RelatorioData.aspx.designer.cs">
+      <DependentUpon>RelatorioData.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DataSet\RelatorioVotos.aspx.cs">
       <DependentUpon>RelatorioVotos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -277,6 +284,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="DataSet\RelatorioBairroVotos.aspx" />
+    <Content Include="DataSet\RelatorioData.aspx" />
     <Content Include="DataSet\RelatorioVotos.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -376,6 +384,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="DataSet\RelatorioFaixa.rdlc" />
+    <EmbeddedResource Include="DataSet\Report1.rdlc" />
     <EmbeddedResource Include="DataSet\ReportVoto.rdlc" />
     <EmbeddedResource Include="DataSet\ReportVotoBairro.rdlc" />
     <EmbeddedResource Include="Migrations\201609231248319_001.resx">
