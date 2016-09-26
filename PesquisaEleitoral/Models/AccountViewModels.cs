@@ -81,9 +81,6 @@ namespace PesquisaEleitoral.Models
         [Display(Name = "Bairro")]
         public int BairroID { get; set; }
 
-        [Display(Name = "Candidato")]
-        public int CandidatoID { get; set; }
-
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]

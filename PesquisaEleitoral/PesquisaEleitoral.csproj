@@ -385,7 +385,6 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="DataSet\RelatorioFaixa.rdlc" />
-    <EmbeddedResource Include="DataSet\Report1.rdlc" />
     <EmbeddedResource Include="DataSet\ReportVoto.rdlc" />
     <EmbeddedResource Include="DataSet\ReportVotoBairro.rdlc" />
     <EmbeddedResource Include="Migrations\201609231248319_001.resx">
