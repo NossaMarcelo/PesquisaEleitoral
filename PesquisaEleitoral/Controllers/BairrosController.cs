@@ -10,6 +10,7 @@ using PesquisaEleitoral.Models;
 
 namespace PesquisaEleitoral.Controllers
 {
+    [Authorize (Users ="Administrador@gmail.com")]
     public class BairrosController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
