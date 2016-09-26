@@ -13,5 +13,10 @@ namespace PesquisaEleitoral.DataSet
         {
 
         }
+
+        protected void btn_VoltarThree_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Home");
+        }
     }
 }
