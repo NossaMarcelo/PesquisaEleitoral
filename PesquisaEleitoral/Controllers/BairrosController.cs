@@ -7,6 +7,9 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using PesquisaEleitoral.Models;
+using System.Text.RegularExpressions;
+using System.Text;
+using System.Globalization;
 
 namespace PesquisaEleitoral.Controllers
 {
@@ -52,12 +55,38 @@ namespace PesquisaEleitoral.Controllers
         {
             if (ModelState.IsValid)
             {
+                /*string nome = bairro.BairroNome;
+                nome = RemoveAcentos(nome);
+                nome = RemoveEspacos(nome);*/
+
+
                 db.BairroContext.Add(bairro);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
             return View(bairro);
+        }
+
+        private string RemoveEspacos(string text)
+        {
+            text.TrimStart().TrimEnd();
+            RegexOptions options = RegexOptions.None;
+            Regex regex = new Regex("[ ]{2,}", options);
+            return text = regex.Replace(text, " ");
+
+        }
+        public static string RemoveAcentos(string text)
+        {
+            RegexOptions options = RegexOptions.None;
+            Regex regex = new Regex(@"/^([a-zA-Zà-úÀ-Ú0-9]|-|_|\s)+$/ ", options);
+            return text = regex.Replace(text, "");
+        }
+        private string RemoveCaracteres(string text)
+        {
+            RegexOptions options = RegexOptions.None;
+            Regex regex = new Regex(@"[^\w]+", options);
+            return text = regex.Replace(text, "");
         }
 
         // GET: Bairros/Edit/5
