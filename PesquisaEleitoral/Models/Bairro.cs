@@ -32,7 +32,7 @@ namespace PesquisaEleitoral.Models
             {
                 _nome = Regex.Replace(value, @"\s{2,}", " ");
 
-                _nome = Regex.Replace(_nome, @"[^\w]+", "");
+                _nome = Regex.Replace(_nome, @"[^\w\s']+", "");
             }
         }
         private string _nome;

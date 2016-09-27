@@ -438,13 +438,14 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="KarlosTableAdapter" GeneratorDataComponentClassName="KarlosTableAdapter" Name="Karlos" UserDataComponentName="KarlosTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="aspnet_PesquisaEleitoral_20160923093922ConnectionString (Web.config)" DbObjectName="[aspnet-PesquisaEleitoral-20160923093922].dbo.Bairro" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="aspnet_PesquisaEleitoral_20160923093922ConnectionString (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        Bairro.BairroNome AS Bairros, COUNT(AspNetUsers.CandidatoID) AS Votos
-FROM            Bairro INNER JOIN
-                         AspNetUsers ON Bairro.BairroId = AspNetUsers.BairroID
-GROUP BY Bairro.BairroNome</CommandText>
+                    <CommandText>SELECT Candidato.CandidatoNome, Bairro.BairroNome AS Bairros, COUNT(AspNetUsers.CandidatoID) AS Votos
+FROM   Bairro INNER JOIN
+             AspNetUsers ON Bairro.BairroId = AspNetUsers.BairroID INNER JOIN
+             Candidato ON AspNetUsers.CandidatoID = Candidato.CandidatoId
+GROUP BY Bairro.BairroNome, Candidato.CandidatoNome</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -453,19 +454,21 @@ GROUP BY Bairro.BairroNome</CommandText>
             <Mappings>
               <Mapping SourceColumn="Bairros" DataSetColumn="Bairros" />
               <Mapping SourceColumn="Votos" DataSetColumn="Votos" />
+              <Mapping SourceColumn="CandidatoNome" DataSetColumn="CandidatoNome" />
             </Mappings>
             <Sources />
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataVotoTableAdapter" GeneratorDataComponentClassName="DataVotoTableAdapter" Name="DataVoto" UserDataComponentName="DataVotoTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="aspnet_PesquisaEleitoral_20160923093922ConnectionString (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="aspnet_PesquisaEleitoral_20160923093922ConnectionString (Web.config)" DbObjectName="[aspnet-PesquisaEleitoral-20160923093922].dbo.Candidato" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        DATEDIFF(yy, DataContext, GETDATE()) - CASE WHEN (MONTH(DataContext) &gt; MONTH(GETDATE())) OR
-                         (MONTH(DataContext) = MONTH(GETDATE()) AND DAY(DataContext) &gt; DAY(GETDATE())) THEN 1 ELSE 0 END AS Age, COUNT(CandidatoID) AS Votos
-FROM            AspNetUsers
-GROUP BY DATEDIFF(yy, DataContext, GETDATE()) - CASE WHEN (MONTH(DataContext) &gt; MONTH(GETDATE())) OR
-                         (MONTH(DataContext) = MONTH(GETDATE()) AND DAY(DataContext) &gt; DAY(GETDATE())) THEN 1 ELSE 0 END</CommandText>
+                    <CommandText>SELECT Candidato.CandidatoNome, DATEDIFF(yy, AspNetUsers.DataContext, GETDATE()) - CASE WHEN (MONTH(DataContext) &gt; MONTH(GETDATE())) OR
+             (MONTH(DataContext) = MONTH(GETDATE()) AND DAY(DataContext) &gt; DAY(GETDATE())) THEN 1 ELSE 0 END AS Age, COUNT(AspNetUsers.CandidatoID) AS Votos
+FROM   AspNetUsers INNER JOIN
+             Candidato ON AspNetUsers.CandidatoID = Candidato.CandidatoId
+GROUP BY DATEDIFF(yy, AspNetUsers.DataContext, GETDATE()) - CASE WHEN (MONTH(DataContext) &gt; MONTH(GETDATE())) OR
+             (MONTH(DataContext) = MONTH(GETDATE()) AND DAY(DataContext) &gt; DAY(GETDATE())) THEN 1 ELSE 0 END, Candidato.CandidatoNome</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -474,6 +477,7 @@ GROUP BY DATEDIFF(yy, DataContext, GETDATE()) - CASE WHEN (MONTH(DataContext) &g
             <Mappings>
               <Mapping SourceColumn="Age" DataSetColumn="Age" />
               <Mapping SourceColumn="Votos" DataSetColumn="Votos" />
+              <Mapping SourceColumn="CandidatoNome" DataSetColumn="CandidatoNome" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -720,6 +724,13 @@ GROUP BY DATEDIFF(yy, DataContext, GETDATE()) - CASE WHEN (MONTH(DataContext) &g
                 </xs:simpleType>
               </xs:element>
               <xs:element name="Votos" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnVotos" msprop:Generator_ColumnPropNameInRow="Votos" msprop:Generator_ColumnPropNameInTable="VotosColumn" msprop:Generator_UserColumnName="Votos" type="xs:int" minOccurs="0" />
+              <xs:element name="CandidatoNome" msprop:Generator_ColumnVarNameInTable="columnCandidatoNome" msprop:Generator_ColumnPropNameInRow="CandidatoNome" msprop:Generator_ColumnPropNameInTable="CandidatoNomeColumn" msprop:Generator_UserColumnName="CandidatoNome">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -728,6 +739,13 @@ GROUP BY DATEDIFF(yy, DataContext, GETDATE()) - CASE WHEN (MONTH(DataContext) &g
             <xs:sequence>
               <xs:element name="Age" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnAge" msprop:Generator_ColumnPropNameInRow="Age" msprop:Generator_ColumnPropNameInTable="AgeColumn" msprop:Generator_UserColumnName="Age" type="xs:int" minOccurs="0" />
               <xs:element name="Votos" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnVotos" msprop:Generator_ColumnPropNameInRow="Votos" msprop:Generator_ColumnPropNameInTable="VotosColumn" msprop:Generator_UserColumnName="Votos" type="xs:int" minOccurs="0" />
+              <xs:element name="CandidatoNome" msprop:Generator_ColumnVarNameInTable="columnCandidatoNome" msprop:Generator_ColumnPropNameInRow="CandidatoNome" msprop:Generator_ColumnPropNameInTable="CandidatoNomeColumn" msprop:Generator_UserColumnName="CandidatoNome">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>

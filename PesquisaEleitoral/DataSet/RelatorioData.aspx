@@ -16,14 +16,14 @@
         </asp:ScriptManager>
     
         <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" style="margin-bottom: 1px" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt">
-            <LocalReport ReportPath="DataSet\RelatorioFaixa.rdlc">
+            <LocalReport ReportPath="DataSet\Report3.rdlc">
                 <DataSources>
-                    <rsweb:ReportDataSource DataSourceId="ObjectDataSource1" Name="DataFaixaEtaria" />
+                    <rsweb:ReportDataSource DataSourceId="ObjectDataSource2" Name="DataFaixaEData" />
                 </DataSources>
             </LocalReport>
         </rsweb:ReportViewer>
+        <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="PesquisaEleitoral._aspnet_PesquisaEleitoral_20160923093922DataSetTableAdapters.DataVotoTableAdapter"></asp:ObjectDataSource>
         <asp:Button ID="btn_VoltarTwo" runat="server" OnClick="btn_VoltarTwo_Click" Text="Voltar" />
-        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="PesquisaEleitoral._aspnet_PesquisaEleitoral_20160923093922DataSetTableAdapters.DataVotoTableAdapter"></asp:ObjectDataSource>
     
     </div>
     </form>

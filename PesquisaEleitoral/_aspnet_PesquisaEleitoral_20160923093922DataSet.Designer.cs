@@ -3452,6 +3452,8 @@ namespace PesquisaEleitoral {
             
             private global::System.Data.DataColumn columnVotos;
             
+            private global::System.Data.DataColumn columnCandidatoNome;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public KarlosDataTable() {
@@ -3503,6 +3505,14 @@ namespace PesquisaEleitoral {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CandidatoNomeColumn {
+                get {
+                    return this.columnCandidatoNome;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3538,11 +3548,12 @@ namespace PesquisaEleitoral {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public KarlosRow AddKarlosRow(string Bairros, int Votos) {
+            public KarlosRow AddKarlosRow(string Bairros, int Votos, string CandidatoNome) {
                 KarlosRow rowKarlosRow = ((KarlosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Bairros,
-                        Votos};
+                        Votos,
+                        CandidatoNome};
                 rowKarlosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowKarlosRow);
                 return rowKarlosRow;
@@ -3567,6 +3578,7 @@ namespace PesquisaEleitoral {
             internal void InitVars() {
                 this.columnBairros = base.Columns["Bairros"];
                 this.columnVotos = base.Columns["Votos"];
+                this.columnCandidatoNome = base.Columns["CandidatoNome"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3576,9 +3588,13 @@ namespace PesquisaEleitoral {
                 base.Columns.Add(this.columnBairros);
                 this.columnVotos = new global::System.Data.DataColumn("Votos", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnVotos);
+                this.columnCandidatoNome = new global::System.Data.DataColumn("CandidatoNome", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCandidatoNome);
                 this.columnBairros.AllowDBNull = false;
                 this.columnBairros.MaxLength = 2147483647;
                 this.columnVotos.ReadOnly = true;
+                this.columnCandidatoNome.AllowDBNull = false;
+                this.columnCandidatoNome.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3716,6 +3732,8 @@ namespace PesquisaEleitoral {
             
             private global::System.Data.DataColumn columnVotos;
             
+            private global::System.Data.DataColumn columnCandidatoNome;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public DataVotoDataTable() {
@@ -3767,6 +3785,14 @@ namespace PesquisaEleitoral {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CandidatoNomeColumn {
+                get {
+                    return this.columnCandidatoNome;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3802,11 +3828,12 @@ namespace PesquisaEleitoral {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DataVotoRow AddDataVotoRow(int Age, int Votos) {
+            public DataVotoRow AddDataVotoRow(int Age, int Votos, string CandidatoNome) {
                 DataVotoRow rowDataVotoRow = ((DataVotoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Age,
-                        Votos};
+                        Votos,
+                        CandidatoNome};
                 rowDataVotoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDataVotoRow);
                 return rowDataVotoRow;
@@ -3831,6 +3858,7 @@ namespace PesquisaEleitoral {
             internal void InitVars() {
                 this.columnAge = base.Columns["Age"];
                 this.columnVotos = base.Columns["Votos"];
+                this.columnCandidatoNome = base.Columns["CandidatoNome"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3840,8 +3868,12 @@ namespace PesquisaEleitoral {
                 base.Columns.Add(this.columnAge);
                 this.columnVotos = new global::System.Data.DataColumn("Votos", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnVotos);
+                this.columnCandidatoNome = new global::System.Data.DataColumn("CandidatoNome", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCandidatoNome);
                 this.columnAge.ReadOnly = true;
                 this.columnVotos.ReadOnly = true;
+                this.columnCandidatoNome.AllowDBNull = false;
+                this.columnCandidatoNome.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4788,6 +4820,17 @@ namespace PesquisaEleitoral {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CandidatoNome {
+                get {
+                    return ((string)(this[this.tableKarlos.CandidatoNomeColumn]));
+                }
+                set {
+                    this[this.tableKarlos.CandidatoNomeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsVotosNull() {
                 return this.IsNull(this.tableKarlos.VotosColumn);
             }
@@ -4842,6 +4885,17 @@ namespace PesquisaEleitoral {
                 }
                 set {
                     this[this.tableDataVoto.VotosColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CandidatoNome {
+                get {
+                    return ((string)(this[this.tableDataVoto.CandidatoNomeColumn]));
+                }
+                set {
+                    this[this.tableDataVoto.CandidatoNomeColumn] = value;
                 }
             }
             
@@ -8309,6 +8363,7 @@ namespace PesquisaEleitoral._aspnet_PesquisaEleitoral_20160923093922DataSetTable
             tableMapping.DataSetTable = "Karlos";
             tableMapping.ColumnMappings.Add("Bairros", "Bairros");
             tableMapping.ColumnMappings.Add("Votos", "Votos");
+            tableMapping.ColumnMappings.Add("CandidatoNome", "CandidatoNome");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -8325,9 +8380,11 @@ namespace PesquisaEleitoral._aspnet_PesquisaEleitoral_20160923093922DataSetTable
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        Bairro.BairroNome AS Bairros, COUNT(AspNetUsers.CandidatoID) AS Vot" +
-                "os\r\nFROM            Bairro INNER JOIN\r\n                         AspNetUsers ON B" +
-                "airro.BairroId = AspNetUsers.BairroID\r\nGROUP BY Bairro.BairroNome";
+            this._commandCollection[0].CommandText = @"SELECT Candidato.CandidatoNome, Bairro.BairroNome AS Bairros, COUNT(AspNetUsers.CandidatoID) AS Votos
+FROM   Bairro INNER JOIN
+             AspNetUsers ON Bairro.BairroId = AspNetUsers.BairroID INNER JOIN
+             Candidato ON AspNetUsers.CandidatoID = Candidato.CandidatoId
+GROUP BY Bairro.BairroNome, Candidato.CandidatoNome";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -8479,6 +8536,7 @@ namespace PesquisaEleitoral._aspnet_PesquisaEleitoral_20160923093922DataSetTable
             tableMapping.DataSetTable = "DataVoto";
             tableMapping.ColumnMappings.Add("Age", "Age");
             tableMapping.ColumnMappings.Add("Votos", "Votos");
+            tableMapping.ColumnMappings.Add("CandidatoNome", "CandidatoNome");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -8495,11 +8553,12 @@ namespace PesquisaEleitoral._aspnet_PesquisaEleitoral_20160923093922DataSetTable
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        DATEDIFF(yy, DataContext, GETDATE()) - CASE WHEN (MONTH(DataContext) > MONTH(GETDATE())) OR
-                         (MONTH(DataContext) = MONTH(GETDATE()) AND DAY(DataContext) > DAY(GETDATE())) THEN 1 ELSE 0 END AS Age, COUNT(CandidatoID) AS Votos
-FROM            AspNetUsers
-GROUP BY DATEDIFF(yy, DataContext, GETDATE()) - CASE WHEN (MONTH(DataContext) > MONTH(GETDATE())) OR
-                         (MONTH(DataContext) = MONTH(GETDATE()) AND DAY(DataContext) > DAY(GETDATE())) THEN 1 ELSE 0 END";
+            this._commandCollection[0].CommandText = @"SELECT Candidato.CandidatoNome, DATEDIFF(yy, AspNetUsers.DataContext, GETDATE()) - CASE WHEN (MONTH(DataContext) > MONTH(GETDATE())) OR
+             (MONTH(DataContext) = MONTH(GETDATE()) AND DAY(DataContext) > DAY(GETDATE())) THEN 1 ELSE 0 END AS Age, COUNT(AspNetUsers.CandidatoID) AS Votos
+FROM   AspNetUsers INNER JOIN
+             Candidato ON AspNetUsers.CandidatoID = Candidato.CandidatoId
+GROUP BY DATEDIFF(yy, AspNetUsers.DataContext, GETDATE()) - CASE WHEN (MONTH(DataContext) > MONTH(GETDATE())) OR
+             (MONTH(DataContext) = MONTH(GETDATE()) AND DAY(DataContext) > DAY(GETDATE())) THEN 1 ELSE 0 END, Candidato.CandidatoNome";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

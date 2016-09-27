@@ -12,19 +12,21 @@
     <form id="form1" runat="server">
     <div>
     
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    
         <asp:ScriptManager ID="ScriptManager1" runat="server">
         </asp:ScriptManager>
         <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt">
-            <LocalReport ReportPath="DataSet\ReportVotoBairro.rdlc">
+            <LocalReport ReportPath="DataSet\Report1.rdlc">
                 <DataSources>
-                    <rsweb:ReportDataSource DataSourceId="ObjectDataSource1" Name="DataVotoBairro" />
+                    <rsweb:ReportDataSource DataSourceId="ObjectDataSource2" Name="DataNovosa" />
                 </DataSources>
             </LocalReport>
         </rsweb:ReportViewer>
     
-        <asp:Button ID="btn_VoltarOne" runat="server" OnClick="btn_VoltarOne_Click" Text="Voltar" />
+        <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="PesquisaEleitoral._aspnet_PesquisaEleitoral_20160923093922DataSetTableAdapters.KarlosTableAdapter"></asp:ObjectDataSource>
     
-        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="PesquisaEleitoral._aspnet_PesquisaEleitoral_20160923093922DataSetTableAdapters.KarlosTableAdapter"></asp:ObjectDataSource>
+        <asp:Button ID="btn_VoltarOne" runat="server" OnClick="btn_VoltarOne_Click" Text="Voltar" />
     
     </div>
     </form>
